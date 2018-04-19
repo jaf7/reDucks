@@ -15,11 +15,14 @@ const DuckCard = props => {
       <Card
         image={props.duck.image}
         header={props.duck.name}
-        meta='Friend'
-        description='This a good duck. Is this duck cute?'
+        meta={props.duck.isCutie.toString()}
+        description={props.duck.votes}
+
       />
+      <div className="quacker">
     <button onClick={duckVote}> + </button>
     <button onClick={downVoteDatDuck}> - </button>
+    </div>
     </div>
   )
 }

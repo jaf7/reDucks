@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.quack {
+  text-align: center;
+  margin-left: 41%;
+}
+
+.quacker {
+  margin-left: -70%;
+  margin-bottom: 10%;
+}

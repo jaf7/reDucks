@@ -7,7 +7,8 @@ const DuckList = props => {
     return ducksArray.map(duck => <DuckCard duck={duck} upVote={props.upVote} downVote={props.downVote} />)
   }
   return (
-    <div>
+    <div className="quack">
+
       {mapDucks()}
     </div>
   )

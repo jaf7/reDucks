@@ -7,9 +7,9 @@ import DuckList from './DuckList.js';
 class DuckContainer extends Component {
   state = {
     ducks: {
-      one: { id: 'one', name: 'ugly duck', age: 1, image: mattsduck, votes: 0, isCute: false },
-      two: { id: 'two', name: 'morphin time', age: 2, image: morphintime, votes: 0, isCute: false },
-      three: { id: 'three', name: 'nice lil duck', age: 3, image: niceduck, votes: 0, isCute: false }
+      one: { id: 'one', name: 'Masterpiece  ', age: 1, image: mattsduck, votes: 0, isCutie: false },
+      two: { id: 'two', name: 'Garrette', age: 2, image: morphintime, votes: 0, isCutie: true },
+      three: { id: 'three', name: 'nice lil plump boi who would make for delicious dinner', age: 3, image: niceduck, votes: 0, isCutie: false }
     }
   }
 
