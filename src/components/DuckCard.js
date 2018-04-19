@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card } from 'semantic-ui-react'
+import {upVote, downVote} from '../actions.js'
+import {connect} from 'react-redux'
 
 const DuckCard = props => {
   const duckVote = () => {
-    props.upVote(props.duck.id);
+    props.dispatchUpvote(props.duck.id)
   }
 
   const downVoteDatDuck = () => {
-    props.downVote(props.duck.id);
+    props.dispatchDownvote(props.duck.id)
   }
 
   const isThisDuckACutie = `T/F is this duck a cutie? ${props.duck.isCutie.toString()}`;
@@ -30,4 +32,11 @@ const DuckCard = props => {
   )
 }
 
-export default DuckCard;
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatchUpvote: id => dispatch(upVote(id)),
+    dispatchDownvote: id => dispatch(downVote(id))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(DuckCard)
