@@ -34,6 +34,16 @@ export function rootReducer(state = defaultState, action){
             }
           }
       }
+    case 'CUTIE_TOGGLE':
+      return {
+        ducks: {
+          ...state.ducks,
+          [action.payload.duckId]: {
+            ...state.ducks[action.payload.duckId],
+            isCutie: !state.ducks[action.payload.duckId].isCutie
+          }
+        }
+      }
     default:
       return state;
   }

@@ -1,15 +1,19 @@
 import React from 'react';
 import { Card } from 'semantic-ui-react'
-import {upVote, downVote} from '../actions.js'
-import {connect} from 'react-redux'
+import { upVote, downVote, cutieToggle } from '../actions.js'
+import { connect } from 'react-redux'
 
 const DuckCard = props => {
   const duckVote = () => {
-    props.dispatchUpvote(props.duck.id)
+    props.dispatchUpVote(props.duck.id)
   }
 
   const downVoteDatDuck = () => {
-    props.dispatchDownvote(props.duck.id)
+    props.dispatchDownVote(props.duck.id)
+  }
+
+  const cutieToggle = () => {
+    props.dispatchCutie(props.duck.id)
   }
 
   const isThisDuckACutie = `T/F is this duck a cutie? ${props.duck.isCutie.toString()}`;
@@ -27,6 +31,7 @@ const DuckCard = props => {
       <div className="quacker">
         <button onClick={duckVote}> + </button>
         <button onClick={downVoteDatDuck}> - </button>
+        <button onClick={cutieToggle}> Cutie ??? </button>
       </div>
     </div>
   )
@@ -34,8 +39,9 @@ const DuckCard = props => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    dispatchUpvote: id => dispatch(upVote(id)),
-    dispatchDownvote: id => dispatch(downVote(id))
+    dispatchUpVote: id => dispatch(upVote(id)),
+    dispatchDownVote: id => dispatch(downVote(id)),
+    dispatchCutie: id => dispatch(cutieToggle(id))
   }
 }
 
