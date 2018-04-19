@@ -3,6 +3,7 @@ import mattsduck from '../mattsduck.png';
 import morphintime from '../morphintime.png';
 import niceduck from '../niceduck.png';
 import DuckList from './DuckList.js';
+import { Header, Segment } from 'semantic-ui-react';
 
 class DuckContainer extends Component {
   state = {
@@ -40,7 +41,12 @@ class DuckContainer extends Component {
   render() {
     return (
       <div>
-        <h1>re DUCKS</h1>
+        <Segment>
+          <Header as='h1' attached='top' inverted color='grey'>
+            re DUCKS
+          </Header>
+        </Segment>
+        <br/>
         <DuckList ducks={this.state.ducks} upVote={this.upVote} downVote={this.downVote} />
       </div>
     )

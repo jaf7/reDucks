@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import DuckCard from './DuckCard.js';
 
 const DuckList = props => {
