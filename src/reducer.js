@@ -43,21 +43,21 @@ export function rootReducer(state = defaultState, action){
           }
         }
       }
-    case 'LOADING_FOXES':
-      return {...state,
-        foxes: {
-          loading: {
-            ...!state.foxes.loading
+      case 'LOADING_FOXES':
+        return {...state,
+          foxes: {
+            loading: {
+              ...!state.foxes.loading
+            }
           }
         }
-      }
-    case 'ADD_FOXES':
-      return {...state,
-        foxes: {
-          loading: true,
-          picture: action.payload
+      case 'ADD_FOXES':
+        return {...state,
+          foxes: {
+            loading: true,
+            picture: action.payload
+          }
         }
-      }
     default:
       return state;
   }

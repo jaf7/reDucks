@@ -1,4 +1,4 @@
-const URL = 'https://cors-anywhere.herokuapp.com/https://randomfox.ca/floof/'
+const URL = 'https://cors-anywhere.herokuapp.com/https://randomfox.ca/floof/';
 
 export let upVote = duckId => {
   return {

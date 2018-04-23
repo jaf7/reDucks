@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import DuckList from './DuckList.js';
-import FoxCard from './FoxCard.js';
 import { Header, Segment } from 'semantic-ui-react';
+import { fetchFoxes } from '../actions.js';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchFoxes } from '../actions.js';
+import FoxCard from './FoxCard.js'
 
 class DuckContainer extends Component {
   componentDidMount() {
-    this.props.getFoxy();
+    this.props.getFoxy()
   }
 
   render() {
-    console.log("foxes", this.props.foxes);
+    console.log("props are", this.props);
     return (
       <div>
         <Segment>
@@ -22,21 +22,21 @@ class DuckContainer extends Component {
         </Segment>
         <br/>
         <DuckList />
-        { this.props.foxes.loading === true ? <FoxCard /> : null }
+        {this.props.foxes.loading === true ? <FoxCard /> : null}
       </div>
     )
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    getFoxy: bindActionCreators(fetchFoxes, dispatch)
   }
 }
 
 const mapStateToProps = state => {
   return {
     foxes: state.foxes
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getFoxy: bindActionCreators(fetchFoxes, dispatch)
   }
 }
 
