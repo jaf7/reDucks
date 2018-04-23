@@ -1,3 +1,5 @@
+const URL = 'https://cors-anywhere.herokuapp.com/https://randomfox.ca/floof/'
+
 export let upVote = duckId => {
   return {
     type: "INCREASE_VOTE",
@@ -22,5 +24,14 @@ export let cutieToggle = duckId => {
     payload: {
       duckId: duckId
     }
+  }
+}
+
+export function fetchFoxes() {
+  return (dispatch) => {
+    dispatch({ type: 'LOADING_FOXES' });
+    return fetch(URL)
+      .then(response => response.json())
+      .then(json => dispatch({ type: 'ADD_FOXES', payload: json }));
   }
 }

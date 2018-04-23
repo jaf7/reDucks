@@ -1,6 +1,6 @@
 import React from 'react';
 import DuckCard from './DuckCard.js';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
 const DuckList = props => {
   const mapDucks = () => {
@@ -23,4 +23,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(DuckList)
+export default connect(mapStateToProps)(DuckList);
